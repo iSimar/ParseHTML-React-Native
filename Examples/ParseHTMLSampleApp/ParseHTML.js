@@ -1,5 +1,7 @@
 /*
+ParseHTML-React-Native (Version 0.1)
 Coded by: Simar (github.com/iSimar)
+GitHub Project: https://github.com/iSimar/ParseHTML-React-Native
 */
 
 'use strict';
@@ -85,11 +87,14 @@ var ParseHTML = React.createClass({
       return <Text style={segment.style}>{segment.text}</Text>;
     });
   },
+  _decodeHTMLEntities: function(str){
+    return String(str).replace(/<p>/g, '\n\n').replace(/&#x2F;/g, '/').replace('<i>', '').replace('</i>', '').replace(/&#x27;/g, '\'').replace(/&quot;/g, '\"').replace(/<a\s+(?:[^>]*?\s+)?href="([^"]*)" rel="nofollow">(.*)?<\/a>/g, "$1").replace(/&gt;/g, '>');
+  },
   render: function() {
     return (
-      <View style={styles.container}>
+      <View style={[styles.container, this.props.style]}>
         <Text>
-          {this._renderHTMLParseTree(this._buildHTMLParseTree(this.props.code))}
+          {this._renderHTMLParseTree(this._buildHTMLParseTree(this._decodeHTMLEntities(this.props.code)))}
         </Text>
       </View>
     );
@@ -99,8 +104,6 @@ var ParseHTML = React.createClass({
 var styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
     backgroundColor: '#FFFFFF',
   },
 });
