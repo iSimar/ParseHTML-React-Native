@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>7928D4D5-024F-4BF5-ACC1-86698EBFD6DA</string>
+	<key>IDESourceControlProjectName</key>
+	<string>ParseHTMLSampleApp</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>B7A2D39342EF7D5D1C87711D3B6E78872DDF40C6</key>
+		<string>https://github.com/iSimar/ParseHTML-React-Native.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Examples/ParseHTMLSampleApp/ParseHTMLSampleApp.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>B7A2D39342EF7D5D1C87711D3B6E78872DDF40C6</key>
+		<string>../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/iSimar/ParseHTML-React-Native.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>B7A2D39342EF7D5D1C87711D3B6E78872DDF40C6</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>B7A2D39342EF7D5D1C87711D3B6E78872DDF40C6</string>
+			<key>IDESourceControlWCCName</key>
+			<string>ParseHTML-React-Native</string>
+		</dict>
+	</array>
+</dict>
+</plist>

@@ -50,35 +50,39 @@ var ParseHTML = React.createClass({
   _buildHTMLParseTree: function(html_code){
     return this._buildHTMLParseTreeOverload(html_code, []);
   },
-  _buildHTMLParseTreeOverload: function(html_code, segments){
+  _buildHTMLParseTreeOverload: function(html_code, segments, style){
+    if(segments==undefined)
+      segments = [];
+    if(style==undefined)
+      style = [];
     var nextTag = this._getNextHTMLTag(html_code, Object.keys(this.state.tagToStyle));
     if(nextTag.indexStart != -1){
       if(nextTag.indexStart>0){
         segments.push({
-                        "type":"<normal>", 
                         "text": html_code.slice(0, nextTag.indexStart),
+                        "style": style,
                       });
       }
       console.log(nextTag.indexStart);
       var endTag = "</"+(nextTag.tag).slice(1);
       var indexEnd = html_code.indexOf(endTag);
       var new_text = html_code.slice(nextTag.indexStart+nextTag.tag.length, indexEnd);
-      segments.push({"type":nextTag.tag, 
-                      "text": new_text,
-                      "segments": this._buildHTMLParseTreeOverload(new_text, [])});
+      segments.push({"segments": this._buildHTMLParseTreeOverload(new_text, [], style.concat([this.state.tagToStyle[nextTag.tag]]))});
       return this._buildHTMLParseTreeOverload(html_code.slice(indexEnd+endTag.length, html_code.length), segments);
     }
     else{
       if(html_code!=''){
-        segments.push({"type":"<normal>", 
-                       "text": html_code,});
+        segments.push({"text": html_code,
+                       "style": style});
       }
       return segments;
     }
   },
   _renderHTMLParseTree: function(parseTree){
     return parseTree.map((segment)=>{
-      return <Text style={this.state.tagToStyle[segment.type]}>{segment.text}</Text>;
+      if(segment.segments)
+        return this._renderHTMLParseTree(segment.segments)
+      return <Text style={segment.style}>{segment.text}</Text>;
     });
   },
   render: function() {

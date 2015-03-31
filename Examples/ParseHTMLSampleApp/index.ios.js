@@ -15,7 +15,7 @@ var ParseHTMLSampleApp = React.createClass({
   render: function() {
     return (
       <ParseHTML 
-          code="Hello this is <b>Sample</b> HTML text. My name is <i>SpongeBob</i>, my bestfriend is <p>Patrick Star</p>. Lets use the code tag: <code>Hello World!</code>"
+          code="Hello this is <b>Sample </b> HTML text. My name is <i>SpongeBob</i>, my bestfriend is <p>Patrick Star</p>. Lets use the code tag: <code>Hello World!</code>. Here is an example of <b>Nested <i>Tags</i></b>"
           customTagToStyle={{
                               "<p>": {fontSize: 30},
                               "<code>": [{color: "#FF7F50"}, {backgroundColor: "#000000"}]
