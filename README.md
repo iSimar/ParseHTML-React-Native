@@ -1,13 +1,13 @@
-#ParseHTML-React-Native
+# ParseHTML-React-Native
 ParseHTML is a component for [React-Native](https://github.com/facebook/react-native). ParseHTML let's you render html code in your iOS Applications.
 
 HTML Tags currently being parsed: 
 - `<b>`
 - `<i>`
 
-###(This project is still at it's early stage.)
+### (This project is still at it's early stage.)
 
-##Usage
+## Usage
 
 Import ParseHTML using ParseHTML.js
 ````
